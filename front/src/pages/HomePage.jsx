@@ -88,9 +88,18 @@ export default function HomePage() {
       </header>
 
       <div className="home-body">
-        <Sidebar expanded={sidebarExpanded && (
-          <div className="sidebar-backdrop" onClick={() => setSidebarExpanded(false)} />
-        )} onSelect={() => { if (isMobile()) setSidebarExpanded(false); }} onClick={() => { setActiveWorkspaceId(ws.id); onSelect?.(); }} />
+        <Sidebar
+          expanded={sidebarExpanded}
+          onSelect={() => { if (isMobile()) setSidebarExpanded(false); }}
+        />
+
+        {sidebarExpanded && (
+          <div
+            className="sidebar-backdrop"
+            onClick={() => setSidebarExpanded(false)}
+          />
+        )}
+
         <main className="home-content">
           {renderWorkspace()}
         </main>

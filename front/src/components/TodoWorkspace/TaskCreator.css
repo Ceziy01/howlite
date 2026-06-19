@@ -1,0 +1,105 @@
+.task-creator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--input-create-bg);
+  border: 1px solid var(--note-card-border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  box-shadow: var(--md-elevation-1);
+  max-width: 600px;
+  margin: 0 auto 24px;
+  position: relative;
+}
+
+.task-creator-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  min-width: 0;
+}
+
+.task-creator-input::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.task-creator-deadline-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.task-creator-cal-btn {
+  color: var(--md-sys-color-on-surface-variant);
+  width: 32px;
+  height: 32px;
+}
+
+.task-creator-cal-btn .material-icons-round {
+  font-size: 18px;
+}
+
+.task-creator-deadline-label {
+  font-size: 12px;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+.task-creator-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  background: var(--md-sys-color-surface);
+  border-radius: 12px;
+  box-shadow: var(--md-elevation-3);
+  min-width: 180px;
+  overflow: visible;
+  z-index: 200;
+  padding: 4px 0;
+}
+
+.task-creator-menu button {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border: none;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--font-body);
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.task-creator-menu button:hover {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 6%, transparent);
+}
+
+.task-creator-menu button .material-icons-round {
+  font-size: 18px;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.task-creator-date-picker {
+  display: block;
+  margin: 4px 14px 8px;
+  width: calc(100% - 28px);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 6px;
+  background: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 6px 8px;
+  outline: none;
+}

@@ -1,0 +1,120 @@
+.note-creator-collapsed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--input-create-bg);
+  border: 1px solid var(--note-card-border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  cursor: text;
+  box-shadow: var(--md-elevation-1);
+  transition: box-shadow 0.15s;
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+
+.note-creator-collapsed:hover {
+  box-shadow: var(--md-elevation-2);
+}
+
+.note-creator-placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 14px;
+  font-family: var(--font-body);
+  user-select: none;
+}
+
+.note-creator-quick-actions {
+  display: flex;
+  gap: 4px;
+}
+
+/* ── Expanded ─────────────────────────────────────────────────── */
+.note-creator-expanded {
+  background: var(--input-create-bg);
+  border: 1px solid var(--note-card-border);
+  border-radius: 8px;
+  box-shadow: var(--md-elevation-3);
+  max-width: 600px;
+  margin: 0 auto 24px;
+  overflow: hidden;
+}
+
+.note-creator-title {
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--font-title);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 14px 16px 8px;
+  outline: none;
+}
+
+.note-creator-title::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+  font-weight: 400;
+}
+
+.note-creator-content {
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 4px 16px;
+  outline: none;
+  resize: none;
+  min-height: 60px;
+}
+
+.note-creator-content::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.note-creator-list {
+  padding: 4px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.note-creator-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 8px 8px 8px;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.note-creator-tools {
+  display: flex;
+  gap: 4px;
+}
+
+.note-creator-tool--active {
+  color: var(--md-sys-color-primary) !important;
+}
+
+.note-creator-close {
+  height: 32px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 16px;
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.note-creator-close:hover {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent);
+}

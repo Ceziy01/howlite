@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
+
+/* ── Light theme ─────────────────────────────────────────────── */
+:root,
+[data-theme="light"] {
+  --md-sys-color-primary:           #1a73e8;
+  --md-sys-color-on-primary:        #ffffff;
+  --md-sys-color-primary-container: #d3e3fd;
+  --md-sys-color-secondary:         #5f6368;
+  --md-sys-color-surface:           #ffffff;
+  --md-sys-color-surface-variant:   #f1f3f4;
+  --md-sys-color-surface-container: #f8f9fa;
+  --md-sys-color-on-surface:        #202124;
+  --md-sys-color-on-surface-variant:#5f6368;
+  --md-sys-color-outline:           #dadce0;
+  --md-sys-color-outline-variant:   #e8eaed;
+  --md-sys-color-error:             #d93025;
+  --md-sys-color-scrim:             rgba(0,0,0,.32);
+
+  --md-elevation-1: 0 1px 2px rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+  --md-elevation-2: 0 1px 2px rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
+  --md-elevation-3: 0 4px 8px 3px rgba(60,64,67,.15), 0 1px 3px rgba(60,64,67,.3);
+
+  --topbar-bg:        #ffffff;
+  --topbar-border:    #e0e0e0;
+  --sidebar-bg:       #ffffff;
+  --sidebar-border:   #e0e0e0;
+  --note-card-bg:     #ffffff;
+  --note-card-border: #e0e0e0;
+  --note-card-hover:  #f8f9fa;
+  --input-create-bg:  #ffffff;
+
+  --font-body: 'Roboto', sans-serif;
+  --font-title: 'Google Sans', 'Roboto', sans-serif;
+}
+
+/* ── Dark theme ──────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --md-sys-color-primary:           #8ab4f8;
+  --md-sys-color-on-primary:        #1a1a1a;
+  --md-sys-color-primary-container: #1e3a5f;
+  --md-sys-color-secondary:         #9aa0a6;
+  --md-sys-color-surface:           #202124;
+  --md-sys-color-surface-variant:   #2d2e30;
+  --md-sys-color-surface-container: #292a2d;
+  --md-sys-color-on-surface:        #e8eaed;
+  --md-sys-color-on-surface-variant:#9aa0a6;
+  --md-sys-color-outline:           #3c4043;
+  --md-sys-color-outline-variant:   #3c4043;
+  --md-sys-color-error:             #f28b82;
+  --md-sys-color-scrim:             rgba(0,0,0,.5);
+
+  --md-elevation-1: 0 1px 2px rgba(0,0,0,.4), 0 1px 3px 1px rgba(0,0,0,.3);
+  --md-elevation-2: 0 1px 2px rgba(0,0,0,.4), 0 2px 6px 2px rgba(0,0,0,.3);
+  --md-elevation-3: 0 4px 8px 3px rgba(0,0,0,.3), 0 1px 3px rgba(0,0,0,.4);
+
+  --topbar-bg:        #202124;
+  --topbar-border:    #3c4043;
+  --sidebar-bg:       #202124;
+  --sidebar-border:   #3c4043;
+  --note-card-bg:     #2d2e30;
+  --note-card-border: #3c4043;
+  --note-card-hover:  #35363a;
+  --input-create-bg:  #2d2e30;
+}
+
+/* ── Base resets ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--font-body);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+#root { display: flex; flex-direction: column; }
+
+input, button, textarea { font-family: inherit; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--md-sys-color-outline);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-sys-color-secondary);
+}
+
+/* ── Material icon util ──────────────────────────────────────── */
+.md-icon {
+  font-family: 'Material Icons Round';
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ── Ripple button base ──────────────────────────────────────── */
+.md-icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--md-sys-color-on-surface-variant);
+  transition: background 0.15s;
+  overflow: hidden;
+}
+.md-icon-btn:hover {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent);
+}
+.md-icon-btn:active {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+}
+
+/* ── Tooltip ─────────────────────────────────────────────────── */
+.md-tooltip-wrapper {
+  position: relative;
+}
+.md-tooltip {
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 4px;
+  box-shadow: var(--md-elevation-2);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 100;
+}
+.md-tooltip-wrapper:hover .md-tooltip {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .topbar-username {
+    display: none;
+  }
+
+  .topbar-ws-name {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .notes-workspace {
+    padding: 12px;
+  }
+
+  .sidebar--expanded {
+    position: fixed;
+    left: 0;
+    top: 64px;
+    bottom: 0;
+    z-index: 100;
+  }
+}
+
+@media (max-width: 480px) {
+  .notes-masonry {
+    columns: 1 !important;
+  }
+
+  .topbar-title {
+    display: none;
+  }
+}

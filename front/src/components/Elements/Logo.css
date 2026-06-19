@@ -1,0 +1,17 @@
+.topbar-title {
+  font-family: var(--font-title);
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+  margin-left: 4px;
+}
+
+.topbar-logo {
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+
+.has-shadow {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}

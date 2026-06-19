@@ -1,0 +1,227 @@
+.todo-workspace {
+  flex: 1;
+  padding: 24px 32px;
+  overflow-y: auto;
+}
+
+.todo-section {
+  max-width: 640px;
+  margin: 0 auto 16px;
+}
+
+.todo-section-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-bottom: 6px;
+  padding: 0 2px;
+  display: block;
+}
+
+.todo-section-label--collapsible {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--md-sys-color-on-surface-variant);
+  padding: 4px 2px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  margin-bottom: 4px;
+}
+
+.todo-section-label--collapsible:hover {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 6%, transparent);
+}
+
+.todo-collapse-icon {
+  font-size: 16px !important;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.todo-list--done .task-item {
+  opacity: 0.6;
+}
+
+/* ── TaskItem ─────────────────────────────────────────────────── */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 8px 8px 12px;
+  border-radius: 8px;
+  background: var(--note-card-bg);
+  border: 1px solid var(--note-card-border);
+  min-height: 44px;
+  transition: background 0.15s;
+}
+
+.task-item:hover {
+  background: var(--note-card-hover);
+}
+
+.task-item:hover .task-item-actions {
+  opacity: 1;
+}
+
+.task-item--done .task-item-content {
+  text-decoration: line-through;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border-radius: 4px;
+  border: 2px solid var(--md-sys-color-outline);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+
+.task-checkbox:hover {
+  border-color: var(--md-sys-color-primary);
+}
+
+.task-checkbox--checked {
+  background: var(--md-sys-color-primary);
+  border-color: var(--md-sys-color-primary);
+}
+
+.task-checkbox--checked .material-icons-round {
+  font-size: 13px;
+  color: var(--md-sys-color-on-primary);
+}
+
+.task-item-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.task-item-content {
+  font-size: 14px;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--font-body);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.task-item-edit-input {
+  border: none;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+}
+
+.task-item-deadline {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-family: var(--font-body);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.task-item-deadline .material-icons-round {
+  font-size: 12px !important;
+}
+
+.task-item-deadline--today {
+  color: var(--md-sys-color-primary);
+}
+
+.task-item-deadline--overdue {
+  color: var(--md-sys-color-error);
+}
+
+.task-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  opacity: 0;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+
+.task-item-pin {
+  color: var(--md-sys-color-on-surface-variant);
+  width: 32px;
+  height: 32px;
+}
+
+.task-item-pin .material-icons-round {
+  font-size: 18px;
+}
+
+.task-item-pin--active {
+  color: var(--md-sys-color-primary) !important;
+}
+
+.task-item-delete {
+  color: var(--md-sys-color-on-surface-variant);
+  width: 32px;
+  height: 32px;
+}
+
+.task-item-delete .material-icons-round {
+  font-size: 18px;
+}
+
+.task-item-delete:hover {
+  color: var(--md-sys-color-error) !important;
+}
+
+/* ── Empty state ─────────────────────────────────────────────── */
+.todo-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 80px;
+  color: var(--md-sys-color-on-surface-variant);
+  opacity: 0.6;
+}
+
+.todo-empty-icon {
+  font-size: 80px !important;
+  opacity: 0.4;
+}
+
+.todo-empty p {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .todo-workspace {
+    padding: 12px 16px;
+  }
+
+  .task-item-actions {
+    opacity: 1;
+  }
+}

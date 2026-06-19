@@ -1,0 +1,110 @@
+.home-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* ── Topbar ─────────────────────────────────────────────────── */
+.topbar {
+  height: 64px;
+  min-height: 64px;
+  background: var(--topbar-bg);
+  border-bottom: 1px solid var(--topbar-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px 0 4px;
+  z-index: 10;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.topbar-menu-btn {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.topbar-sep {
+  font-size: 18px !important;
+  color: var(--md-sys-color-on-surface-variant);
+  opacity: 0.5;
+}
+
+.topbar-ws-name {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.topbar-username {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--md-sys-color-on-surface-variant);
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+.topbar-logout {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ── Body ───────────────────────────────────────────────────── */
+.home-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.home-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--md-sys-color-surface-container);
+}
+
+/* ── Loading ────────────────────────────────────────────────── */
+.home-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.home-loading-icon {
+  font-size: 48px !important;
+  opacity: 0.4;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── No workspace ───────────────────────────────────────────── */
+.home-no-workspace {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.home-no-workspace p {
+  font-size: 14px;
+}

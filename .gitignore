@@ -1,0 +1,15 @@
+# логи
+logs
+*.log
+*.log*
+logs.txt
+
+node_modules/
+__pycache__/
+dist/
+*.local/
+
+.env
+
+code.txt
+load.py

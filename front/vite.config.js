@@ -10,10 +10,14 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['logo.svg'],
+      devOptions: {
+        enabled: true,
+        type: 'module',
+      },
       manifest: {
         name: 'Howlite',
         short_name: 'Howlite',
-        description: 'Howlite — заметки и задачи',
+        description: 'Howlite',
         theme_color: '#1f1f1f',
         background_color: '#1f1f1f',
         display: 'standalone',

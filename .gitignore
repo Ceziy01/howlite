@@ -3,6 +3,8 @@ logs
 *.log
 *.log*
 logs.txt
+*.zip
+*.tar
 
 node_modules/
 __pycache__/
@@ -10,6 +12,7 @@ dist/
 *.local/
 
 .env
+*.pem
 
 code.txt
 load.py

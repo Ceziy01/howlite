@@ -7,7 +7,7 @@ class NoteItem(BaseModel):
     id: str
     text: str
     checked: bool = False
-    level: int = 0  # 0 = top-level, 1 = sub-item
+    level: int = 0
 
 
 class NoteCreate(BaseModel):

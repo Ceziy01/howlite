@@ -70,6 +70,11 @@ export default function TaskItem({ task }) {
         ) : (
           <span className="task-item-content" onDoubleClick={() => !task.done && setEditing(true)}>
             {task.content}
+            {task._pending && (
+              <span className="material-icons-round task-item-pending" title="Ожидает синхронизации">
+                cloud_off
+              </span>
+            )}
           </span>
         )}
 

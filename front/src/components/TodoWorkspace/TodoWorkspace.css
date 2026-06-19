@@ -225,3 +225,10 @@
     opacity: 1;
   }
 }
+
+.task-item-pending {
+  font-size: 13px !important;
+  opacity: 0.45;
+  margin-left: 6px;
+  vertical-align: middle;
+}

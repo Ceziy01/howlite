@@ -6,7 +6,7 @@ import EditWorkspaceModal from './EditWorkspaceModal';
 import './Sidebar.css';
 
 
-export default function Sidebar({expanded}) {
+export default function Sidebar({ expanded }) {
   const {
     workspaces,
     activeWorkspaceId,
@@ -22,12 +22,22 @@ export default function Sidebar({expanded}) {
 
   const [contextMenu, setContextMenu] = useState(null);
 
+  const longPressTimer = useRef(null);
+
+  const handleTouchStart = (ws, e) => {
+    const touch = e.touches[0];
+    longPressTimer.current = setTimeout(() => {
+      setContextMenu({ workspace: ws, x: touch.clientX, y: touch.clientY });
+    }, 500);
+  };
+  const handleTouchEnd = () => clearTimeout(longPressTimer.current);
+
   return (
     <>
       <aside
         className={`sidebar ${expanded
-            ? 'sidebar--expanded'
-            : ''
+          ? 'sidebar--expanded'
+          : ''
           }`}
       >
         <div className="sidebar-items">
@@ -38,9 +48,9 @@ export default function Sidebar({expanded}) {
             >
               <button
                 className={`sidebar-item ${activeWorkspaceId ===
-                    ws.id
-                    ? 'sidebar-item--active'
-                    : ''
+                  ws.id
+                  ? 'sidebar-item--active'
+                  : ''
                   }`}
                 onClick={() =>
                   setActiveWorkspaceId(
@@ -56,6 +66,9 @@ export default function Sidebar({expanded}) {
                     y: e.clientY,
                   });
                 }}
+                onTouchStart={(e) => handleTouchStart(ws, e)}
+                onTouchEnd={handleTouchEnd}
+                onTouchMove={handleTouchEnd}
               >
                 <span className="material-icons-round sidebar-item-icon">
                   {ws.icon}

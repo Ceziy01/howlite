@@ -170,7 +170,16 @@ export default function NoteCard({ note }) {
           </div>
         </div>
 
-        <span className="note-card-date">{formattedDate}</span>
+
+
+        <div className="note-card-meta">
+          {note._pending && (
+            <span className="material-icons-round note-card-pending" title="Ожидает синхронизации">
+              cloud_off
+            </span>
+          )}
+          <span className="note-card-date">{formattedDate}</span>
+        </div>
       </div>
     </div>
   );

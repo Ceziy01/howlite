@@ -297,3 +297,13 @@
       transparent
     );
 }
+
+.note-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.note-card-pending {
+  font-size: 14px !important;
+  opacity: 0.45;
+}

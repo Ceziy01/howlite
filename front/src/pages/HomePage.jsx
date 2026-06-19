@@ -13,8 +13,9 @@ export default function HomePage() {
   const { theme, toggleTheme } = useTheme();
   const { activeWorkspace, loading } = useWorkspace();
   const [sidebarExpanded, setSidebarExpanded] = useState(false);
+  const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
 
-  {/* крутящаяся херь загрузки */}
+  {/* крутящаяся херь загрузки */ }
   if (loading) {
     return (
       <div className="home-loading">
@@ -23,7 +24,7 @@ export default function HomePage() {
     );
   }
 
-  {/* Отрисовка воркспейса */}
+  {/* Отрисовка воркспейса */ }
   const renderWorkspace = () => {
     if (!activeWorkspace) {
       return (
@@ -54,7 +55,7 @@ export default function HomePage() {
           </button>
 
           {/* логотип этого пиздеца */}
-          <Logo/>
+          <Logo />
           {activeWorkspace && (
             <>
               <span className="topbar-sep material-icons-round">chevron_right</span>
@@ -87,7 +88,9 @@ export default function HomePage() {
       </header>
 
       <div className="home-body">
-        <Sidebar expanded={sidebarExpanded} />
+        <Sidebar expanded={sidebarExpanded && (
+          <div className="sidebar-backdrop" onClick={() => setSidebarExpanded(false)} />
+        )} onSelect={() => { if (isMobile()) setSidebarExpanded(false); }} onClick={() => { setActiveWorkspaceId(ws.id); onSelect?.(); }} />
         <main className="home-content">
           {renderWorkspace()}
         </main>
